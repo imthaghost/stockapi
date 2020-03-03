@@ -3,11 +3,10 @@ package controllers
 import (
 	"bytes"
 	"io/ioutil"
-	"net/http"
 
 	"github.com/labstack/echo"
 
-	"github.com/imthaghost/stockAPI/stock"
+	"github.com/imthaghost/stockapi/stock"
 )
 
 //Price is data about the site we will scrape
@@ -35,5 +34,6 @@ func GetPrice(c echo.Context) (err error) {
 	// crawl with the passed in data
 	r := stock.Price(u.Ticker)
 	// return the links
-	return c.JSON(http.StatusCreated, r)
+	c.Logger().Print(r)
+	return c.JSON(200, r)
 }
