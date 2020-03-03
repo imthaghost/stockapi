@@ -20,9 +20,9 @@ func main() {
 		AllowMethods: []string{echo.GET, echo.HEAD, echo.PUT, echo.PATCH, echo.POST, echo.DELETE},
 	}))
 	// price endpoint
-	e.POST("/price", controllers.GetPrice)
+	go e.POST("/price", controllers.GetPrice)
 	// news endpoint
-	e.POST("/news", controllers.GetNews)
+	go e.POST("/news", controllers.GetNews)
 	// Server
 	e.Logger.Fatal(e.Start(":8000"))
 
