@@ -7,7 +7,7 @@ import (
 
 	"github.com/labstack/echo"
 
-	"github.com/imthaghost/stockAPI/stock"
+	"github.com/imthaghost/stockapi/stock"
 )
 
 //News is data about the site we will scrape
