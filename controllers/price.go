@@ -33,7 +33,9 @@ func GetPrice(c echo.Context) (err error) {
 	}
 	// crawl with the passed in data
 	r := stock.Price(u.Ticker)
+
+	coolMap := map[string]string{"price": r}
 	// return the links
-	c.Logger().Print(r)
-	return c.JSON(200, r)
+	c.Logger().Print(coolMap)
+	return c.JSON(200, coolMap)
 }

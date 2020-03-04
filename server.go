@@ -20,9 +20,11 @@ func main() {
 		AllowMethods: []string{echo.GET, echo.HEAD, echo.PUT, echo.PATCH, echo.POST, echo.DELETE},
 	}))
 	// price endpoint
-	go e.POST("/price", controllers.GetPrice)
+	e.POST("/price", controllers.GetPrice)
 	// news endpoint
-	go e.POST("/news", controllers.GetNews)
+	e.POST("/news", controllers.GetNews)
+	// trending enpoint
+	e.GET("/trending", controllers.Trending)
 	// Server
 	e.Logger.Fatal(e.Start(":8000"))
 
