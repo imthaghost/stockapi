@@ -10,11 +10,6 @@ import (
 	"github.com/imthaghost/stockapi/stock"
 )
 
-//News is data about the site we will scrape
-type news struct {
-	Ticker string `json:"ticker" form:"ticker" query:"ticker"`
-}
-
 //GetNews ...
 func GetNews(c echo.Context) (err error) {
 	// Read the Body content
@@ -25,7 +20,7 @@ func GetNews(c echo.Context) (err error) {
 	// Restore the io.ReadCloser to its original state
 	c.Request().Body = ioutil.NopCloser(bytes.NewBuffer(bodyBytes))
 	// Continue to use the Body, like Binding it to a struct:
-	u := new(news)
+	u := new(Company)
 	// bind the model with the context body
 	er := c.Bind(u)
 	// panic!

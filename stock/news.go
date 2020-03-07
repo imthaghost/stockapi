@@ -33,5 +33,5 @@ func News(ticker string) TopArticle {
 	s4 := htmlquery.Find(doc, articleURL)
 	href := string(htmlquery.SelectAttr(s4[0], "href"))
 	toparticle := TopArticle{title, imagelink, yahoofinanceURL + href}
-	return article
+	return toparticle
 }

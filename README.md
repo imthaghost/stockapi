@@ -29,18 +29,44 @@ A Go Restful API that scrapes real-time stock data from Yahoo Finance.
 -   [License](#license)
 -   [Contributors](#contributors)
 
-## 🚀 Installation
+## 🚀 Quick Start
 
-### Terminal
+### Installation
 
-```bash
-# get the packages
-go get https://github.com/imthaghost/stockapi
-# in your GOPATH go to the stockapi directory
-cd github.com/imthaghost/stockapi
-# start the server
-go run server.go
+```sh
+$ go get https://github.com/imthaghost/stockapi
 ```
+
+### Instantiate API
+
+Create `server.go`
+
+```go
+
+package main
+
+import (
+
+"github.com/imthaghost/stockapi/server"
+
+)
+
+func main() {
+
+    s := server.NewServer()
+    s.Start(":8000")
+
+}
+
+```
+
+Start server
+
+```sh
+$ go run server.go
+```
+
+![Echo](/docs/media/echo.png)
 
 ## Examples
 
