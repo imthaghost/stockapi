@@ -66,8 +66,6 @@ Start server
 $ go run server.go
 ```
 
-![Echo](/docs/media/echo.png)
-
 ## Examples
 
 ![Postman](/docs/media/postman.gif)
