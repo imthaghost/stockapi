@@ -20,7 +20,7 @@ func NewServer() *StockAPI {
 	}
 }
 
-// Start server funcitonality
+// Start server functionality
 func (s *StockAPI) Start(port string) {
 	// logger
 	s.e.Use(middleware.Logger())
