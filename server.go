@@ -12,7 +12,7 @@ func main() {
 	e := echo.New()
 	// logger
 	e.Use(middleware.Logger())
-	// Stream recovery
+	// recover
 	e.Use(middleware.Recover())
 	//CORS
 	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
@@ -21,11 +21,7 @@ func main() {
 	}))
 	// price endpoint
 	e.POST("/price", controllers.GetPrice)
-	// news endpoint
-	e.POST("/news", controllers.GetNews)
-	// trending enpoint
-	e.GET("/trending", controllers.Trending)
-	// Server
+	// Start Server
 	e.Logger.Fatal(e.Start(":8000"))
 
 }

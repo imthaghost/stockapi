@@ -4,8 +4,8 @@ import (
 	"github.com/antchfx/htmlquery"
 )
 
-// Article structure
-type Article struct {
+// TopArticle structure
+type TopArticle struct {
 	Title    string
 	ImageURL string
 	Src      string
@@ -20,7 +20,7 @@ const (
 )
 
 // News ...
-func News(ticker string) Article {
+func News(ticker string) TopArticle {
 	url := baseURL + ticker
 	doc, err := htmlquery.LoadURL(url)
 	if err != nil {
@@ -32,6 +32,6 @@ func News(ticker string) Article {
 	imagelink := string(htmlquery.SelectAttr(s3[0], "src"))
 	s4 := htmlquery.Find(doc, articleURL)
 	href := string(htmlquery.SelectAttr(s4[0], "href"))
-	article := Article{title, imagelink, yahoofinanceURL + href}
+	toparticle := TopArticle{title, imagelink, yahoofinanceURL + href}
 	return article
 }
