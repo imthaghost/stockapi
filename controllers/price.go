@@ -10,10 +10,7 @@ import (
 	"github.com/imthaghost/stockapi/stock"
 )
 
-// Company contains data about the company we are searching for
-type Company struct {
-	Ticker string `json:"ticker" form:"ticker" query:"ticker"`
-}
+
 
 // GetPrice handler method binds client JSON from body, form, or query string
 // to the company strcutre and uses the ticker to crawl Yahoo Finance and return

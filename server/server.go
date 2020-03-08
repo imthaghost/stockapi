@@ -32,7 +32,7 @@ func (s *StockAPI) Start(port string) {
 		AllowMethods: []string{echo.GET, echo.HEAD, echo.PUT, echo.PATCH, echo.POST, echo.DELETE},
 	}))
 	// price endpoint
-	s.e.POST("/price", controllers.GetPrice)
+	s.e.GET("/price", controllers.GetPrice)
 	// Start Server
 	s.e.Logger.Fatal(s.e.Start(port))
 }
