@@ -7,6 +7,7 @@ import (
 
 	"github.com/labstack/echo"
 
+	"github.com/imthaghost/stockapi/models"
 	"github.com/imthaghost/stockapi/stock"
 )
 
@@ -20,7 +21,7 @@ func GetNews(c echo.Context) (err error) {
 	// Restore the io.ReadCloser to its original state
 	c.Request().Body = ioutil.NopCloser(bytes.NewBuffer(bodyBytes))
 	// Continue to use the Body, like Binding it to a struct:
-	u := new(Company)
+	u := new(models.Company)
 	// bind the model with the context body
 	er := c.Bind(u)
 	// panic!

@@ -21,7 +21,7 @@ const (
 
 // News ...
 func News(ticker string) TopArticle {
-	url := baseURL + ticker
+	url := BaseURL + ticker
 	doc, err := htmlquery.LoadURL(url)
 	if err != nil {
 		panic(err)

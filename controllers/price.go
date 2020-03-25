@@ -7,16 +7,16 @@ import (
 
 	"github.com/labstack/echo"
 
+	"github.com/imthaghost/stockapi/models"
 	"github.com/imthaghost/stockapi/stock"
 )
-
-
 
 // GetPrice handler method binds client JSON from body, form, or query string
 // to the company strcutre and uses the ticker to crawl Yahoo Finance and return
 // price formatted in JSON
 func GetPrice(c echo.Context) (err error) {
 	var bodyBytes []byte
+	// request body
 	if c.Request().Body != nil {
 		// Read the Body content
 		bodyBytes, _ = ioutil.ReadAll(c.Request().Body)
@@ -24,7 +24,7 @@ func GetPrice(c echo.Context) (err error) {
 	// Restore the io.ReadCloser to its original state
 	c.Request().Body = ioutil.NopCloser(bytes.NewBuffer(bodyBytes))
 	// Continue to use the Body, like Binding it to a struct:
-	u := new(Company)
+	u := new(models.Company)
 	// bind the model with the context body
 	er := c.Bind(u)
 	// panic!

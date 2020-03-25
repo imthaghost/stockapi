@@ -1,4 +1,4 @@
-package controllers
+package models
 
 // Company contains data about the company we are searching for
 type Company struct {
