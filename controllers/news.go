@@ -11,7 +11,7 @@ import (
 	"github.com/imthaghost/stockapi/stock"
 )
 
-//GetNews ...
+// GetNews ...
 func GetNews(c echo.Context) (err error) {
 	// Read the Body content
 	var bodyBytes []byte
